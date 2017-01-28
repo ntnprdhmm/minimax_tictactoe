@@ -75,7 +75,7 @@ class Board {
      * @param coord     => the grid square coordinates
      */
     playMove(marker, coord) {
-        this._grid[parseInt(coord[1])][parseInt(coord[0])] = marker;
+        this._grid[parseInt(coord[0])][parseInt(coord[1])] = marker;
         this._turn++;
     }
 
@@ -84,7 +84,7 @@ class Board {
      * @returns {boolean}
      */
     isOver() {
-        return this._turn === 9;
+        return this._turn >= 9;
     }
 
     /**
