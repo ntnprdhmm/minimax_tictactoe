@@ -16,20 +16,10 @@ class AI {
         let bestMove = null;
         let moves = board.getAvailableMoves();
 
-        // First turn
-        if(board.turn === 0)
-            return [1, 1];
-        else if(board.turn === 1 && board.grid[1][1] === '')
-            return [1, 1];
-        else if(board.turn === 1)
-            return [[0,0], [0,2], [2,2], [2,0]][Math.floor(Math.random() * 4)];
-
         for (let move in moves) {
             let clonedBoard = board.clone();
             clonedBoard.playMove(this._symbol, moves[move]);
             let currentScore = this.minimax(clonedBoard, this._opponent);
-            console.log('Current score: ' + currentScore);
-            console.log('Current move: ' + moves[move]);
             if(currentScore > bestScore) {
                 bestScore = currentScore;
                 bestMove = moves[move];
