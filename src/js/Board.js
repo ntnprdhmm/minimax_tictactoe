@@ -1,4 +1,4 @@
-export default class Board {
+class Board {
 
     constructor() {
         this._turn = 0;
