@@ -40,6 +40,16 @@ class Board {
     }
 
     /**
+     * Check in the grid if this square is available
+     * @param row
+     * @param col
+     * @returns {boolean}
+     */
+    isFree(row, col) {
+        return this._grid[row][col] === '';
+    }
+
+    /**
      * Create a copy of the current Board
      * @returns {Board}
      */
@@ -65,7 +75,7 @@ class Board {
      * @param coord     => the grid square coordinates
      */
     playMove(marker, coord) {
-        this._grid[parseInt(coord[0])][parseInt(coord[1])] = marker;
+        this._grid[parseInt(coord[1])][parseInt(coord[0])] = marker;
         this._turn++;
     }
 
